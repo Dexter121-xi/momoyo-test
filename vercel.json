@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.4"
+    }
+  },
+  "routes": [
+    {
+      "src": "/build/(.*)",
+      "dest": "/build/$1"
+    },
+    {
+      "src": "/(POSTER|about-bahan|bahan|image-sequence|menu|referensi)/(.*)",
+      "dest": "/$1/$2"
+    },
+    {
+      "src": "/(favicon.ico|favicon.svg|robots.txt|apple-touch-icon.png)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ],
+  "outputDirectory": "public"
+}
